@@ -107,7 +107,6 @@ router.post('/facebookLogin', async (req, res) => {
         let user = await User.findOne({facebookId: req.body.id});
 
         if (!user) {
-            console.log('NOOOO');
             user = new User({
                 username: req.body.email || req.body.id,
                 password: nanoid(),

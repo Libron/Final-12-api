@@ -23,7 +23,7 @@ const run = async () => {
 
     const generateRandomPhotos = (userList) => {
         const gallery = [];
-        for (let i = 0; i < library.getRndInteger(10, 50); i++) {
+        for (let i = 0; i < library.getRndInteger(50, 100); i++) {
             gallery.push({
                 title: loremIpsum(),
                 image: library.random(PICTURES),
