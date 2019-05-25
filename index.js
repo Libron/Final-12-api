@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const config = require('./config');
+const gallery = require('./app/gallery');
 
 const app = express();
 
@@ -14,6 +15,7 @@ const port = 8000;
 
 mongoose.connect(config.dbUrl, config.mongoOptions).then(() => {
     app.listen(port, () => {
+        app.use('/gallery', gallery);
         console.log(`Server started on ${port} port`);
     });
 });
